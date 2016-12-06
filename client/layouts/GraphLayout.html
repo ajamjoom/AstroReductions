@@ -16,10 +16,10 @@
         <hr>
         <div class="row">
           <div class="center col s6">
-        UPS Center Lat: {{plotData.upt_lat}}
+        UPS Center Lat: {{center.upt_lat}}
       </div>
         <div class="center col s6">
-        UPS Center Long: {{plotData.upt_long}}
+        UPS Center Long: {{center.upt_long}}
       </div>
       </div>
       <table class="striped highlight centered">
@@ -32,7 +32,7 @@
           </tr>
         </thead>
         <tbody>
-          {{#each plotData.sights}}
+          {{#each sights}}
             <tr>
               <td>{{this.zn}}</td>
               <td>{{this.delta}}</td>

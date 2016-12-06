@@ -39,7 +39,7 @@
           <span class="autoform-remove-item "><i class="material-icons right">close</i></span>
         {{/if}}      
         <br>
-        <div class="row "> 
+        <!-- <div class="row "> 
         <div class="input-field col s6">
           {{> afFieldInput name=this.current.zn }}
           <label >Azimuth (In positive degrees)</label>
@@ -57,6 +57,34 @@
         <div class="input-field col s6">
           {{> afFieldInput name=this.current.ap_long}}
           <label>AP Long (E = +, W = -)</label>
+        </div>
+      </div> -->
+      <div class="row "> 
+        <div class="input-field col s4">
+          {{> afFieldInput name=this.current.gha }}
+          <label >GHA (In positive degrees)</label>
+        </div>
+        <div class="input-field col s4">
+          {{> afFieldInput name=this.current.dec}}
+          <label>Declanation Corrected</label>
+        </div>
+        <div class="input-field col s4">
+          {{> afFieldInput name=this.current.num}}
+          <label>1=Moon U, 2=Moon L, 3 = Sun U, 4=Sun L, 5 = Other</label>
+        </div>
+      </div>
+      <div class="row "> 
+        <div class="input-field col s4">
+          {{> afFieldInput name=this.current.hs }}
+          <label >Height Sighted</label>
+        </div>
+        <div class="input-field col s4">
+          {{> afFieldInput name=this.current.ie}}
+          <label>Index Error</label>
+        </div>
+        <div class="input-field col s4">
+          {{> afFieldInput name=this.current.myHieght}}
+          <label>Height Sighted From</label>
         </div>
       </div>
       {{/afEachArrayItem}}

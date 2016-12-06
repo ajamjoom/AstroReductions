@@ -3,10 +3,10 @@ import { Mongo } from 'meteor/mongo';
 export const GraphData = new Mongo.Collection('graphData');
 
 SightsSchema = new SimpleSchema({
-    object_name: {
-    type: String,
+    num: {
+    type: Number,
     label: "Name of object",
-    optional:true
+    //optional:true
   },
   date: {
     type: Date,
@@ -58,12 +58,13 @@ SightsSchema = new SimpleSchema({
     type: Number,
     label: "Final GHA",
     decimal: true,
-    optional:true
+    //optional:true
   },
   ap_long: {
     type: Number,
     decimal: true,
     label: "AP Long",
+    optional: true
   },
   lha: {
     type: Number,
@@ -87,13 +88,13 @@ SightsSchema = new SimpleSchema({
     type: Number,
     label: "Corrected Declanation",
     decimal: true,
-    optional:true
+    //optional:true
   },
   hs: {
     type: Number,
     label: "Hs",
     decimal: true,
-    optional:true
+    //optional:true
   },
   ie: {
     type: Number,
@@ -101,9 +102,9 @@ SightsSchema = new SimpleSchema({
     decimal: true,
     optional:true
   },
-  hoe: {
+  myHieght: {
     type: Number,
-    label: "HoE",
+    label: "myHieght",
     decimal: true,
     optional:true
   },
@@ -134,7 +135,8 @@ SightsSchema = new SimpleSchema({
   ap_lat: {
     type: Number,
     decimal: true,
-    label: "AP Lat"
+    label: "AP Lat",
+    optional: true
   },
   h: {
     type: Number,
@@ -157,7 +159,8 @@ SightsSchema = new SimpleSchema({
   delta: {
     type: Number,
     decimal: true,
-    label: "Hc-Ha"
+    label: "Hc-Ha",
+    optional: true
   },
   z: {
     type: Number,
@@ -168,7 +171,8 @@ SightsSchema = new SimpleSchema({
   zn: {
     type: Number,
     decimal: true,
-    label: "Zn"
+    label: "Zn",
+    optional: true
   }
 });
 
