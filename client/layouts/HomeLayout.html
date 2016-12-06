@@ -1,0 +1,77 @@
+<template name="HomeLayout" >
+<div class="center-align">
+   
+    <h4>This is a vertual Universal Plotting Sheet, enter the sights you want to plot.</h4>
+
+
+   {{#autoForm collection="GraphData" type="normal" id="inputData" }}
+    
+    <div class="card grey lighten-4 z-depth-0">
+      <div class="card-content">
+        <div class="row "> 
+          <div class="input-field col s6">
+            {{> afFieldInput name='upt_lat'}}
+            <label>UPS Center Lat</label>
+          </div>
+          <div class="input-field col s6">
+            {{> afFieldInput name='upt_long'}}
+            <label >UPS Center Long</label>
+          </div>
+        </div>
+        <div class="instrument">
+          {{> afArrayField name="sights" template="CustomArrayField"}}
+        </div>
+        <button type="submit" class="btn btn-primary" >Graph</button>
+      </div>
+    </div>
+  {{/autoForm}}
+  </div>
+</template>
+
+<template name="afArrayField_CustomArrayField">
+  {{#if afFieldIsInvalid name=atts.name}}
+    <span>{{{afFieldMessage name=atts.name}}}</span>
+  {{/if}}
+  <div class="card grey lighten-2 z-depth-0">
+    <div class="card-content">
+      {{#afEachArrayItem name=atts.name minCount=this.atts.minCount maxCount=this.atts.maxCount}}
+        {{#if afArrayFieldHasMoreThanMinimum name=../atts.name minCount=../atts.minCount maxCount=../atts.maxCount}}
+          <span class="autoform-remove-item "><i class="material-icons right">close</i></span>
+        {{/if}}      
+        <br>
+        <div class="row "> 
+        <div class="input-field col s6">
+          {{> afFieldInput name=this.current.zn }}
+          <label >Azimuth (In positive degrees)</label>
+        </div>
+        <div class="input-field col s6">
+          {{> afFieldInput name=this.current.delta}}
+          <label>Delta (Hc-Ho)</label>
+        </div>
+      </div>
+      <div class="row "> 
+        <div class="input-field col s6">
+          {{> afFieldInput name=this.current.ap_lat}}
+          <label >AP Lat (N = +, S = -)</label>
+        </div>
+        <div class="input-field col s6">
+          {{> afFieldInput name=this.current.ap_long}}
+          <label>AP Long (E = +, W = -)</label>
+        </div>
+      </div>
+      {{/afEachArrayItem}}
+   </div>
+  {{#if afArrayFieldHasLessThanMaximum name=atts.name minCount=this.atts.minCount maxCount=this.atts.maxCount}}
+    <center>
+      <button
+        type="button"
+        class="add-btn autoform-add-item grey lighten-1"
+        data-autoform-field="{{atts.name}}"
+        data-autoform-minCount="{{atts.minCount}}"
+        data-autoform-maxCount="{{atts.maxCount}}">
+          Add Sight
+      </button>
+    </center>
+  {{/if}}
+  </div>
+</template>

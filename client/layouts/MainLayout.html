@@ -1,0 +1,31 @@
+<template name="MainLayout">
+	<head>
+		<title>Reductions</title>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="theme.css">
+		
+ 
+	</head>
+	<body>
+		<div class="nav">
+			{{> Template.dynamic template=nav}}
+		</div>
+
+	    <div class ="middle container">
+	   		{{> Template.dynamic template=main}}
+	   	</div>
+   	</body>
+</template>
+
+<template name="Navbar">
+   <nav>
+    <div class="nav-wrapper">
+      <div class="container">
+      <a href="/" class="brand-logo">Reductions</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="#">About</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</template>

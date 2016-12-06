@@ -1,0 +1,55 @@
+<template name="GraphLayout">
+   <head>
+      <script src="https://wzrd.in/standalone/function-plot@1.17.3"></script>
+      <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+   </head>
+  
+ <div class="row col 12">
+      <div class="center col s6">
+        <h5>UPS Graph</h5>
+<div id="graph">
+    </div>
+
+      </div>
+      <div class="center col s6">
+        <h5>Data Plotted</h5>
+        <hr>
+        <div class="row">
+          <div class="center col s6">
+        UPS Center Lat: {{plotData.upt_lat}}
+      </div>
+        <div class="center col s6">
+        UPS Center Long: {{plotData.upt_long}}
+      </div>
+      </div>
+      <table class="striped highlight centered">
+        <thead>
+          <tr>
+              <th data-field="zn">Zenith</th>
+              <th data-field="Delta">Delta</th>
+              <th data-field="ap_lat">AP Lat</th>
+              <th data-field="ap_long">AP Long</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each plotData.sights}}
+            <tr>
+              <td>{{this.zn}}</td>
+              <td>{{this.delta}}</td>
+              <td>{{this.ap_lat}}</td>
+              <td>{{this.ap_long}}</td>
+            </tr>  
+          {{/each}}
+         </tbody>
+      </table>
+      </div>
+  </div>
+</template>
+
+
+ 
+
+       
+          
+ 
+       
