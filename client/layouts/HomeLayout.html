@@ -1,21 +1,21 @@
 <template name="HomeLayout" >
-<div class="center-align">
+<div class="margin center-align">
    
-    <h4>This is a vertual Universal Plotting Sheet, enter the sights you want to plot.</h4>
+    <h4>This is a virtual Universal Plotting Sheet, enter the sights you want to plot.</h4>
 
 
    {{#autoForm collection="GraphData" type="normal" id="inputData" }}
     
-    <div class="card grey lighten-4 z-depth-0">
+    <div class="middle card grey lighten-4 z-depth-0">
       <div class="card-content">
         <div class="row "> 
           <div class="input-field col s6">
             {{> afFieldInput name='upt_lat'}}
-            <label>UPS Center Lat</label>
+            <label>UPS Center Lat (S = -, N = +)</label>
           </div>
           <div class="input-field col s6">
             {{> afFieldInput name='upt_long'}}
-            <label >UPS Center Long</label>
+            <label >UPS Center Long (W = -, E = +)</label>
           </div>
         </div>
         <div class="instrument">
@@ -70,7 +70,7 @@
         </div>
         <div class="input-field col s4">
           {{> afFieldInput name=this.current.num}}
-          <label>1=Moon U, 2=Moon L, 3 = Sun U, 4=Sun L, 5 = Other</label>
+          <label>1=Moon U, 2=Moon L, 3 = Sun U, 4=Sun L</label>
         </div>
       </div>
       <div class="row "> 

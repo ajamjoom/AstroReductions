@@ -25,10 +25,6 @@ var zn_slope = function(zn,upt_lat){
 
 var perp_slope = function(slope){
 	var new_slope = -(Math.pow(slope, -1))
-	// console.log("slope")
-	// console.log(slope)
-	// console.log("perp slope")
-	// console.log(new_slope)
 	return new_slope
 }
 
@@ -332,8 +328,6 @@ console.log(zN(-20.128,43,42));
 
 function hA(Hs, indexError, myHeight)
 {
-  console.log("HSHSHSHSHSHS")
-  console.log(Hs)
   var dip = .0293 * Math.sqrt(myHeight);
   console.log("HA")
   console.log((Hs + indexError/60 - dip))
